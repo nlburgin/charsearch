@@ -1,0 +1,7 @@
+#!/bin/sh
+INPUT=NOPE
+if INPUT=`zenity --entry --text='       Character Search       ' --title='search for a character'` 2>/dev/null
+then 
+	echo $INPUT
+	grep -iB 1 "$INPUT" </usr/local/bin/codepoint_sorted_by_name.txt | sed '/--/d' | zenity --list --text='  Select a character to be copied into the clipboard  ' --column 'character' --column 'Description' --title 'select a character' 2>/dev/null | tr -d '\n' | xclip -i -selection 'clipboard'
+fi
