@@ -1,5 +1,5 @@
 #!/bin/sh
-INPUT=NOPE
+
 if INPUT=`zenity --entry --text='       Character Search       ' --title='search for a character'` 2>/dev/null
 then 
 	echo $INPUT
